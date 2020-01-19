@@ -77,6 +77,7 @@
               :action="$http.defaults.baseURL + '/upload'"
               :show-file-list="false"
               :on-success="res => $set(item, 'icon' , res.url)"
+              :headers="getAuthHeaders()"
             >
               <img v-if="item.icon" :src="item.icon" class="avatar">
               <i v-else class="el-icon-plus avatar-uploader-icon"></i>
